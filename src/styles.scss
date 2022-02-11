@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/cdk' as cdk;
+@use '@angular/material' as mat;
+
+// ##### CSS from angular cdk #####
+@include cdk.overlay();
+
+// ##### CSS from angular material #####
+@include mat.core();
+
+$fake-theme: mat.define-light-theme(mat.$indigo-palette, mat.$indigo-palette, mat.$indigo-palette);
+
+@include mat.core-theme($fake-theme);
+@include mat.menu-theme($fake-theme);
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
